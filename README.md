@@ -41,3 +41,33 @@ componentes, diretivas, pipes e serviços que são relacionados.
 
 ## Anatomia do Módulo
 ![Anatomia do Módulo](img_readme/anatomia.png)
+
+## Crindo o projeto
+
+Primeiro instalamos a [CLI do Angular](https://cli.angular.io/). 
+
+```
+npm i -g @angular/cli
+```
+
+### ng new nome_diretorio
+
+A CLI Angula facilita a criação de um aplicativo que já funciona, pronto para uso.
+
+```
+ng new frontend
+```
+
+Va para a pasta frontend
+
+```
+cd frontend
+```
+
+e start o projeto 
+
+```
+npm start
+```
+
+ele vai abrir no link: http://localhost:4200/

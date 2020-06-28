@@ -1,12 +1,13 @@
-# Cadastro de Produto
-Projeto feito em Angular para cadastro de produtos
+# O projeto
+Feito em Angular 9 para aprendizado e retirado do curso  para cadastro de produtos.
+Projeto feito para o aprendizado em Angular retirado do curso do Leonardo Leitão e [disponível gratuitamente no YouTube](https://www.youtube.com/playlist?list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3).
+É um CRUD de produtos.
 
 # Backend simples feito em JSON Server
 O foco aqui é desenvolver a parte de Angular por isso não tivemos foco na parte do backend.
-A api foi feita utilizando JSON server uma forma fácil de criar um bd utilizando JSON. Para ver como foi feito acesse a pasta backend.
+A api foi feita utilizando [JSON server](https://www.npmjs.com/package/json-server) uma forma fácil de criar um bd utilizando JSON. Para ver como foi feito acesse a pasta backend.
 
 # FrontEnd
-Projeto feito em Angular para cadastro de produtos.
 
 # Árvore de Componentes
 ![Árvore de Componentes](img_readme/arvore.png)

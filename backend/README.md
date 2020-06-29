@@ -15,5 +15,3 @@ Instalar o JSON Server:
 ```
 npm i json-server
 ```
-
-

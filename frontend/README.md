@@ -37,3 +37,6 @@ ng add @angular/material
 ```
 ng g c components/template/header
 ```
+
+## Link para o mateiral icons
+[https://material.io/resources/icons/?style=baseline](https://material.io/resources/icons/?style=baseline)

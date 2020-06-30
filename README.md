@@ -71,3 +71,63 @@ npm start
 ```
 
 ele vai abrir no link: http://localhost:4200/
+
+# Attribute Directives (Diretivas de Atributos)
+
+Altera a aparência e o comportamento de um elemento,
+componente ou outra diretiva.
+
+```ts
+@Directive({
+    selector: '[appRed]'
+})
+export class RedDirective {
+    constructor(el: ElementRef) {
+        el.nativeElement.style.color = '#e35e6b';
+    }
+}
+```
+
+```html
+<i class="material-icons v-middle" appRed>
+    favorite
+</i>
+```
+
+# Structural Directives (Diretivas estruturais)
+
+Altera o layout adicionando e removendo elementos da [DOM](https://tableless.com.br/entendendo-o-dom-document-object-model/).
+
+
+```html
+<form *ngIf="product" class="product-form"></form>
+```
+
+```html
+<ul>
+    <li *ngFor="let product of products">
+        {{ product.name }}
+    </li>
+</ul>
+```
+
+# Property Binding (Vinculação de Propriedade)
+
+```html
+<table [dataSource]="products"></table>
+```
+
+```ts
+@Component({
+    selector: 'app-product-read',
+    templateUrl: './product-read.component.html',
+    stylesUrls: ['./product-read.component.css']
+})
+export class ProductReadComponent {
+    implements OnInit {
+        products: Product[];
+    }
+}
+```
+
+Time: 15:00 min

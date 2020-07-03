@@ -130,4 +130,105 @@ export class ProductReadComponent {
 }
 ```
 
-Time: 15:00 min
+# Event Binding (Vinculação de Evento)
+
+```html
+<button
+    mat-raised-button
+    (click)="createProduct()"
+    color="primary">
+    Salvar
+</button>
+```
+
+```ts
+@Component({
+    selector: 'app-product-create',
+    templateUrl: './product-Create.component.html',
+    stylesUrls: ['./product-Create.component.css']
+})
+export class ProductCreateComponent implements OnInit {
+        createProduct(): void {
+            // ...
+        }
+    }
+```
+
+# One Way Data Binding
+
+Modificou no TS muda no html em apenas uma direção. 
+
+```html
+<input [value]="nome">
+```
+
+```ts
+nome: string;
+```
+
+# Two Way Data Binding
+
+Se você alterar no TS ele vai mudar no HTML e se você mudar no 
+HTML ele vai alterar no TS.
+
+```html
+<input [(ngModel)]="nome">
+```
+
+```ts
+nome: string;
+```
+
+# Angular Router
+
+```html
+<a routeLink="/products">
+    Produtos
+</a>    
+```
+
+```html
+<mat-sidebar-content>
+    <router-outlet></router-outlet>
+</mat-sidebar-content>
+```
+
+```ts
+const routes: Routes = [{
+    path: "products",
+    component: ProductCrudComponent
+}, {
+    path: "products/create",
+    component: ProductCreateComponent
+}];
+```
+
+# Angular Pipes
+
+Processamentos em variáveis.
+
+No exemplo estamos formatando a variável para ficar no formado de date.
+
+Esse é o símbolo chmado pipe: |
+
+```html
+<p>
+    O vencimento é
+    {{ produto.vencimento | date }}
+</p>
+```
+
+```html
+<td mat-cell *matCellDef="let product">
+    {{ produto.price | currency: 'BRL' }}
+</td>
+```
+
+Cadeia de pipes:
+
+```html
+<p>
+    O vencimento é
+    {{ produto.vencimento | date: 'fullDate' | uppercase }}
+</p>
+```

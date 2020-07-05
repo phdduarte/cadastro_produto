@@ -269,3 +269,115 @@ criarProduto(): void {
     })
 }
 ```
+
+# Services e Injeção de Dependência [Angular Docs](https://angular.io/guide/architecture-services)
+
+São classes que têm como principal objetivo <span style="color:green">organizar</span> e <span style="color:red">compartilhar</span> <ins>métodos</ins> e <ins>dados</ins> entre `componentes`.
+
+Posso usar services dentro de diretivas por exemplo.
+
+Pode também compartilhar dados entre os componentes. 
+
+## Criando um service
+
+Comando CLI
+```
+ng g s services/product
+```
+
+Classe de exemplo
+```ts
+@Injectable({
+    providedIn: "root",
+})
+export class ProductService {
+    // ...
+}
+```
+
+```ts
+providedIn: "root" é o que chamamos de AppModule o Injector.
+```
+
+Services são [singletons](https://pt.wikipedia.org/wiki/Singleton) dentro do escopo de um `injector`.
+
+- Injector:
+    - ModuleInjector:
+        ```ts 
+        @NgModule 
+        ```
+        ```ts 
+        @Injectable 
+        ``` 
+    - ElementInjector:
+        ```ts 
+        @Directive
+        ```
+        ```ts 
+        @Component
+        ``` 
+
+Mais informações na [Documentação do Angular](https://angular.io/guide/hierarchical-dependency-injection)
+
+## Injeção de Dependência
+
+É um padrão no qual a classe recebe as <span style="color:red">dependências</span> de uma <span style="color:green">fonte externa</span> ao invés de criar por conta própria.
+
+## Exemplo SEM injeção de dependência
+
+Sempre que eu modificar a classe motor eu vou precisar modificar a classe Carro
+Como no exemplo acrescentando cilindrada a classe motor eu preciso 
+agora passar como parâmetro na classe carro. 
+Ou seja como Carro cria Motor ele fica muito dependente e isso não é bom.
+
+- Classe Carro
+
+```ts
+class Carro {
+    motor: Motor
+
+    constructor() {
+        this.motor = new Motor()
+    }
+}
+```
+
+- Classe Motor
+
+```ts
+class Motor {
+    cilindrada: number
+
+    constructor(cilindrada: number) {
+        this.cilindrada = new cilindrada
+    }
+}
+```
+
+
+## Exemplo COM injeção de dependência
+
+- Classe Carro
+
+```ts
+class Carro {
+    motor: Motor
+
+    constructor(motor: Motor) {
+        this.motor = motor
+    }
+}
+```
+
+- Classe Motor
+
+```ts
+class Motor {
+    cilindrada: number
+
+    constructor(cilindrada: number) {
+        this.cilindrada = new cilindrada
+    }
+}
+```
+

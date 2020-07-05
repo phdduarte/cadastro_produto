@@ -232,3 +232,40 @@ Cadeia de pipes:
     {{ produto.vencimento | date: 'fullDate' | uppercase }}
 </p>
 ```
+
+# Programação Reativa
+
+Angular usa o framework ReactiveX.
+
+```ts
+import { Observable } from "rxjs";
+```
+
+# O Padrão Observer
+
+- Padrão orientado a `Evento`!
+- Função sendo passada como parâmetro para outra função: [callbacks](https://medium.com/totvsdevelopers/entendendo-fun%C3%A7%C3%B5es-callback-em-javascript-7b500dc7fa22).
+- [Assíncrono: callbacks, promises e async functions.](https://medium.com/@alcidesqueiroz/javascript-ass%C3%ADncrono-callbacks-promises-e-async-functions-9191b8272298)
+- callbacks -> promises -> Observables.
+
+O Observer é um padrão de projeto de software que define uma dependência um-para-muitos entre objetos de modo que quando um objeto muda o estado, todos seus dependentes são notificados e atualizados automaticamente. Permite que objetos interessados sejam avisados da mudança de estado ou outros eventos ocorrendo num outro objeto.
+
+O padrão Observer é também chamado de Publisher-Subscriber, Event Generator e Dependents.
+
+FONTE: [wikipedia](https://pt.wikipedia.org/wiki/Observer)
+
+### Pseudo código:
+
+```ts
+criarNoBackend(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(this.url, produto);
+}
+```
+
+```ts
+criarProduto(): void {
+    this.criarNoBackend(this.produto).subscribe(() => {
+        this.exibirMensagem("Salvo com sucesso!");
+    })
+}
+```

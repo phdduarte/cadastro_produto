@@ -93,6 +93,12 @@ export class RedDirective {
 </i>
 ```
 
+## Criando diretiva no CLI do Angular
+
+```
+ng g d directives/red
+```
+
 # Structural Directives (Diretivas estruturais)
 
 Altera o layout adicionando e removendo elementos da [DOM](https://tableless.com.br/entendendo-o-dom-document-object-model/).

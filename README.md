@@ -1,6 +1,5 @@
 # O projeto
-Feito em Angular 9 para aprendizado e retirado do curso  para cadastro de produtos.
-Projeto feito para o aprendizado em Angular retirado do curso do Leonardo Leitão e [disponível gratuitamente no YouTube](https://www.youtube.com/playlist?list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3).
+Feito em Angular 9 para aprendizado e retirado do curso do Leonardo Leitão e [disponível gratuitamente no YouTube](https://www.youtube.com/playlist?list=PLdPPE0hUkt0rPyAkdhHIIquKbwrGUkvw3).
 É um CRUD de produtos.
 
 # Backend simples feito em JSON Server
